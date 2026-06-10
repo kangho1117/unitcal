@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { convert, formatResult, getUnitsForCategory, getDefaultPair } from '@/lib/units';
 import styles from './UnitConverter.module.css';
 
-export default function UnitConverter({ category }) {
+export default function UnitConverter({ category, initialFromUnit, initialToUnit }) {
   const t = useTranslations('common');
   const tUnits = useTranslations('units');
 
@@ -13,8 +13,8 @@ export default function UnitConverter({ category }) {
   const [defaultFrom, defaultTo] = getDefaultPair(category);
 
   const [value, setValue] = useState('1');
-  const [fromUnit, setFromUnit] = useState(defaultFrom);
-  const [toUnit, setToUnit] = useState(defaultTo);
+  const [fromUnit, setFromUnit] = useState(initialFromUnit || defaultFrom);
+  const [toUnit, setToUnit] = useState(initialToUnit || defaultTo);
   const [copied, setCopied] = useState(false);
   const [swapping, setSwapping] = useState(false);
 

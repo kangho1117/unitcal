@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { siteConfig } from '@/lib/siteConfig';
-import { categories, getUnitsForCategory, categoryIcons } from '@/lib/units';
+import { categories, getUnitsForCategory, categoryIcons, popularUnitPairs } from '@/lib/units';
 import UnitConverter from '@/components/UnitConverter';
 import AdBanner from '@/components/AdBanner';
 import { Link } from '@/i18n/navigation';
@@ -51,6 +51,7 @@ export default async function ConvertPage({ params }) {
   const units = getUnitsForCategory(category);
   const icon = categoryIcons[category] || '🔄';
   const categoryName = tCat(category);
+  const categoryPairs = popularUnitPairs.filter((p) => p.category === category);
 
   return (
     <div className={styles.page}>
@@ -113,6 +114,27 @@ export default async function ConvertPage({ params }) {
             </table>
           </div>
         </section>
+
+        {/* Popular Conversions for this category */}
+        {categoryPairs.length > 0 && (
+          <section className={styles.popularPairsSection}>
+            <h2 className={styles.infoTitle}>
+              <span className={styles.infoIcon}>⭐</span>
+              {categoryName} {t('popularConversions')}
+            </h2>
+            <div className={styles.pairsGrid}>
+              {categoryPairs.map((pair) => (
+                <Link
+                  key={`${pair.from}-to-${pair.to}`}
+                  href={`/convert/${category}/${pair.from}-to-${pair.to}`}
+                  className={styles.pairCard}
+                >
+                  <span>{tUnits(pair.from)} → {tUnits(pair.to)}</span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Other Categories */}
         <section className={styles.otherSection}>

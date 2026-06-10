@@ -49,7 +49,7 @@
 .description {
   color: var(--color-text-muted);
   font-size: 1rem;
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
 }
@@ -87,14 +87,29 @@
   font-size: 0.95rem;
 }
 
-/* Table Section */
-.tableSection {
-  max-width: 700px;
+/* Tables Layout */
+.tablesContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  max-width: 800px;
   margin: 0 auto var(--space-2xl);
+}
+
+.tableSection {
   padding: var(--space-xl);
   background: var(--color-surface-solid);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-lg);
+}
+
+.tableTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  color: var(--color-text);
+  border-left: 3px solid var(--color-primary);
+  padding-left: var(--space-sm);
 }
 
 .tableWrapper {
@@ -120,28 +135,35 @@
   padding: var(--space-sm) var(--space-md);
   border-bottom: 1px solid var(--color-border-light);
 }
-.unitName {
-  font-weight: 600;
-  color: var(--color-text);
-}
-.unitKey {
-  color: var(--color-text-muted);
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
+
+.valCol {
+  font-weight: 500;
+  color: var(--color-text-secondary);
 }
 
-/* Other Categories */
-.otherSection {
-  max-width: 700px;
-  margin: 0 auto;
+.resultCol {
+  font-weight: 700;
+  color: var(--color-primary);
 }
-.otherGrid {
+
+/* Related Conversions Section */
+.relatedSection {
+  max-width: 700px;
+  margin: 0 auto var(--space-2xl);
+  padding: var(--space-xl);
+  background: var(--color-surface-solid);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+}
+
+.relatedGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: var(--space-sm);
   margin-top: var(--space-md);
 }
-.otherCard {
+
+.relatedCard {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
@@ -154,7 +176,8 @@
   text-decoration: none;
   transition: all var(--transition-fast);
 }
-.otherCard:hover {
+
+.relatedCard:hover {
   background: var(--color-primary-subtle);
   color: var(--color-primary);
 }
@@ -165,8 +188,14 @@
     font-size: 1.7rem;
   }
 
+  .tablesContainer {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
   .infoSection,
-  .tableSection {
+  .tableSection,
+  .relatedSection {
     padding: var(--space-lg);
   }
 
@@ -175,50 +204,7 @@
     padding: var(--space-sm) var(--space-sm);
   }
 
-  .otherGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .pairsGrid {
+  .relatedGrid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-.popularPairsSection {
-  max-width: 700px;
-  margin: 0 auto var(--space-2xl);
-  padding: var(--space-xl);
-  background: var(--color-surface-solid);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-lg);
-}
-
-.pairsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: var(--space-sm);
-  margin-top: var(--space-md);
-}
-
-.pairCard {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-md);
-  border-radius: var(--radius-sm);
-  background: var(--color-bg-alt);
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  border: 1px solid transparent;
-  transition: all var(--transition-fast);
-}
-
-.pairCard:hover {
-  background: var(--color-primary-subtle);
-  color: var(--color-primary);
-  border-color: var(--color-border);
-  transform: translateY(-2px);
-}
-
