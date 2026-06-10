@@ -47,20 +47,6 @@ unitcal/
 
 ---
 
-## ⚙️ 사이트 정보 수정하기
-
-[`src/lib/siteConfig.js`](file:///Users/kangho/Desktop/Coding/unitcal/src/lib/siteConfig.js)에서 사이트 이름이나 도메인, 문의 메일 주소를 간편하게 수정할 수 있습니다.
-
-```javascript
-export const siteConfig = {
-  name: 'UnitCal',                      // 사이트 타이틀
-  url: 'https://unitcal.com',           // 사이트 주소
-  contactEmail: 'contact@unitcal.com',  // 문의 수신 메일
-};
-```
-
----
-
 ## 🚀 시작하기
 
 ### 1. 패키지 설치
