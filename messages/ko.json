@@ -24,7 +24,9 @@
     "allCategories": "전체 카테고리",
     "tryConverter": "변환기 사용하기",
     "unitReference": "단위 참조 표",
-    "backToHome": "홈으로 돌아가기"
+    "backToHome": "홈으로 돌아가기",
+    "pairHeading": "{fromUnit} {toUnit} ({fromKey} to {toKey}) 변환기",
+    "quickTable": "{fromUnit} - {toUnit} 단위 변환 표"
   },
   "home": {
     "heroTitle": "모든 단위를,",
@@ -141,6 +143,8 @@
     "homeDescription": "무게, 길이, 온도, 부피, 면적, 속도, 시간, 데이터, 압력, 에너지 단위를 즉시 변환하세요. 무료, 빠르고 정확합니다.",
     "convertTitle": "{category} 변환기 — UnitCal",
     "convertDescription": "무료 온라인 {category} 단위 변환기. {description}",
+    "pairTitle": "{fromUnit} {toUnit} 변환기 - 1 {fromKey} to {toKey} | UnitCal",
+    "pairDescription": "무료 온라인 {fromUnit}에서 {toUnit} ({fromKey} to {toKey}) 단위 변환기. 실시간 변환 결과, 변환 공식 및 단위 참조 표를 확인하세요.",
     "aboutTitle": "소개 — UnitCal 무료 온라인 단위 변환기",
     "aboutDescription": "UnitCal은 무게, 길이, 온도 등을 지원하는 무료 온라인 단위 변환 도구입니다.",
     "privacyTitle": "개인정보처리방침 — UnitCal",

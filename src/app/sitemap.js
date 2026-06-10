@@ -1,5 +1,5 @@
 import { siteConfig } from '@/lib/siteConfig';
-import { categories } from '@/lib/units';
+import { categories, popularUnitPairs } from '@/lib/units';
 import { routing } from '@/i18n/routing';
 
 export default function sitemap() {
@@ -27,6 +27,18 @@ export default function sitemap() {
         lastModified: now,
         changeFrequency: 'monthly',
         priority: 0.9,
+      });
+    }
+  }
+
+  // Unit-pair convert pages
+  for (const locale of locales) {
+    for (const pairObj of popularUnitPairs) {
+      urls.push({
+        url: `${baseUrl}/${locale}/convert/${pairObj.category}/${pairObj.from}-to-${pairObj.to}`,
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority: 0.8,
       });
     }
   }

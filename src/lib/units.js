@@ -229,3 +229,74 @@ export function getDefaultPair(category) {
   };
   return defaults[category] || ['', ''];
 }
+
+export const popularUnitPairs = [
+  // weight
+  { category: 'weight', from: 'kg', to: 'lb' },
+  { category: 'weight', from: 'lb', to: 'kg' },
+  { category: 'weight', from: 'g', to: 'oz' },
+  { category: 'weight', from: 'oz', to: 'g' },
+  { category: 'weight', from: 'kg', to: 'g' },
+  { category: 'weight', from: 'g', to: 'kg' },
+  
+  // length
+  { category: 'length', from: 'mile', to: 'km' },
+  { category: 'length', from: 'km', to: 'mile' },
+  { category: 'length', from: 'inch', to: 'cm' },
+  { category: 'length', from: 'cm', to: 'inch' },
+  { category: 'length', from: 'ft', to: 'm' },
+  { category: 'length', from: 'm', to: 'ft' },
+  { category: 'length', from: 'yard', to: 'm' },
+  { category: 'length', from: 'm', to: 'yard' },
+  { category: 'length', from: 'inch', to: 'mm' },
+  { category: 'length', from: 'mm', to: 'inch' },
+
+  // temperature
+  { category: 'temperature', from: 'celsius', to: 'fahrenheit' },
+  { category: 'temperature', from: 'fahrenheit', to: 'celsius' },
+  { category: 'temperature', from: 'celsius', to: 'kelvin' },
+  { category: 'temperature', from: 'kelvin', to: 'celsius' },
+
+  // volume
+  { category: 'volume', from: 'l', to: 'gallon_us' },
+  { category: 'volume', from: 'gallon_us', to: 'l' },
+  { category: 'volume', from: 'ml', to: 'cup' },
+  { category: 'volume', from: 'cup', to: 'ml' },
+  { category: 'volume', from: 'fl_oz', to: 'ml' },
+  { category: 'volume', from: 'ml', to: 'fl_oz' },
+
+  // area
+  { category: 'area', from: 'sqm', to: 'pyeong' },
+  { category: 'area', from: 'pyeong', to: 'sqm' },
+  { category: 'area', from: 'sqm', to: 'sqft' },
+  { category: 'area', from: 'sqft', to: 'sqm' },
+  { category: 'area', from: 'acre', to: 'hectare' },
+  { category: 'area', from: 'hectare', to: 'acre' },
+
+  // speed
+  { category: 'speed', from: 'kmh', to: 'mph' },
+  { category: 'speed', from: 'mph', to: 'kmh' },
+  { category: 'speed', from: 'ms', to: 'kmh' },
+  { category: 'speed', from: 'kmh', to: 'ms' },
+
+  // time
+  { category: 'time', from: 'hour', to: 'minute' },
+  { category: 'time', from: 'minute', to: 'second' },
+  { category: 'time', from: 'day', to: 'hour' },
+
+  // data
+  { category: 'data', from: 'kb', to: 'mb' },
+  { category: 'data', from: 'mb', to: 'gb' },
+  { category: 'data', from: 'gb', to: 'tb' },
+
+  // pressure
+  { category: 'pressure', from: 'bar', to: 'psi' },
+  { category: 'pressure', from: 'psi', to: 'bar' },
+  { category: 'pressure', from: 'atm', to: 'pa' },
+
+  // energy
+  { category: 'energy', from: 'cal', to: 'j' },
+  { category: 'energy', from: 'kcal', to: 'kj' },
+  { category: 'energy', from: 'kwh', to: 'j' },
+];
+

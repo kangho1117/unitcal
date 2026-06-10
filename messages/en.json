@@ -24,7 +24,9 @@
     "allCategories": "All Categories",
     "tryConverter": "Try the Converter",
     "unitReference": "Unit Reference Table",
-    "backToHome": "Back to Home"
+    "backToHome": "Back to Home",
+    "pairHeading": "{fromUnit} to {toUnit} ({fromKey} to {toKey}) Converter",
+    "quickTable": "{fromUnit} to {toUnit} Conversion Table"
   },
   "home": {
     "heroTitle": "Convert Any Unit,",
@@ -141,6 +143,8 @@
     "homeDescription": "Convert weight, length, temperature, volume, area, speed, time, data, pressure, and energy units instantly. Free, fast, and accurate.",
     "convertTitle": "{category} Converter — UnitCal",
     "convertDescription": "Free online {category} unit converter. {description}",
+    "pairTitle": "{fromUnit} to {toUnit} Converter - 1 {fromKey} to {toKey} | UnitCal",
+    "pairDescription": "Free online {fromUnit} to {toUnit} ({fromKey} to {toKey}) converter. Get instant conversion results, formulas, and reference tables.",
     "aboutTitle": "About UnitCal — Free Online Unit Converter",
     "aboutDescription": "Learn about UnitCal, a free online unit conversion tool supporting weight, length, temperature, and more.",
     "privacyTitle": "Privacy Policy — UnitCal",

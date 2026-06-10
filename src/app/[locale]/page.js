@@ -68,7 +68,7 @@ export default function HomePage() {
             {popularConversions.map((conv) => (
               <Link
                 key={`${conv.from}-${conv.to}`}
-                href={`/convert/${conv.category}`}
+                href={`/convert/${conv.category}/${conv.from}-to-${conv.to}`}
                 className={styles.popularCard}
                 id={`popular-${conv.from}-${conv.to}`}
               >
