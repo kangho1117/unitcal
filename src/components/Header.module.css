@@ -120,6 +120,7 @@
     transition: transform var(--transition-slow);
     gap: var(--space-xs);
     z-index: 99;
+    box-shadow: var(--shadow-lg);
   }
   .navOpen {
     transform: translateX(0);

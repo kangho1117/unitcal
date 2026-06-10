@@ -170,6 +170,11 @@
     padding: var(--space-lg);
   }
 
+  .table th,
+  .table td {
+    padding: var(--space-sm) var(--space-sm);
+  }
+
   .otherGrid {
     grid-template-columns: repeat(2, 1fr);
   }

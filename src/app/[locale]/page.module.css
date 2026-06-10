@@ -186,14 +186,31 @@
 
   .grid {
     grid-template-columns: 1fr;
+    gap: var(--space-md);
   }
 
   .popularGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+
+  .popularCard {
+    padding: var(--space-sm) var(--space-md);
+    gap: var(--space-sm);
+  }
+
+  .popularLabel {
+    font-size: 0.8rem;
   }
 
   .hero {
     padding: var(--space-3xl) 0 var(--space-2xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .popularGrid {
+    grid-template-columns: 1fr;
   }
 }
 
