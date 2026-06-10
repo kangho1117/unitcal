@@ -1,49 +1,315 @@
+/* ============================================================
+   UnitCal — Global Design System
+   ============================================================ */
+
+/* ---------- CSS Custom Properties (Design Tokens) ---------- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary palette */
+  --color-primary: hsl(250, 65%, 55%);
+  --color-primary-light: hsl(250, 65%, 65%);
+  --color-primary-dark: hsl(250, 65%, 42%);
+  --color-primary-subtle: hsl(250, 60%, 95%);
+
+  /* Accent */
+  --color-accent: hsl(170, 70%, 45%);
+  --color-accent-light: hsl(170, 70%, 55%);
+
+  /* Backgrounds */
+  --color-bg: hsl(230, 25%, 97%);
+  --color-bg-alt: hsl(230, 20%, 94%);
+  --color-surface: rgba(255, 255, 255, 0.72);
+  --color-surface-solid: hsl(0, 0%, 100%);
+
+  /* Text */
+  --color-text: hsl(230, 25%, 14%);
+  --color-text-secondary: hsl(230, 15%, 45%);
+  --color-text-muted: hsl(230, 10%, 60%);
+
+  /* Borders */
+  --color-border: hsl(230, 15%, 88%);
+  --color-border-light: hsl(230, 15%, 93%);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.10);
+  --shadow-xl: 0 16px 50px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 30px hsla(250, 65%, 55%, 0.20);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+  --transition-slow: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Container */
+  --container-max: 1200px;
+  --header-height: 64px;
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-blur: 20px;
 }
 
+/* ---------- Dark Mode ---------- */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-primary: hsl(250, 70%, 65%);
+    --color-primary-light: hsl(250, 70%, 75%);
+    --color-primary-dark: hsl(250, 70%, 50%);
+    --color-primary-subtle: hsl(250, 40%, 18%);
+
+    --color-accent: hsl(170, 60%, 55%);
+    --color-accent-light: hsl(170, 60%, 65%);
+
+    --color-bg: hsl(230, 18%, 9%);
+    --color-bg-alt: hsl(230, 18%, 12%);
+    --color-surface: rgba(255, 255, 255, 0.05);
+    --color-surface-solid: hsl(230, 18%, 14%);
+
+    --color-text: hsl(230, 15%, 92%);
+    --color-text-secondary: hsl(230, 10%, 62%);
+    --color-text-muted: hsl(230, 10%, 48%);
+
+    --color-border: hsl(230, 12%, 22%);
+    --color-border-light: hsl(230, 12%, 18%);
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.35);
+    --shadow-xl: 0 16px 50px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 30px hsla(250, 70%, 65%, 0.15);
+
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(255, 255, 255, 0.08);
   }
 }
 
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 a {
-  color: inherit;
+  color: var(--color-primary);
   text-decoration: none;
+  transition: color var(--transition-fast);
+}
+a:hover {
+  color: var(--color-primary-light);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ---------- Container ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* ---------- Glass Card ---------- */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+}
+
+/* ---------- Gradient Backgrounds ---------- */
+.gradient-bg {
+  background: linear-gradient(
+    135deg,
+    hsl(250, 65%, 55%) 0%,
+    hsl(280, 60%, 50%) 50%,
+    hsl(200, 70%, 50%) 100%
+  );
+}
+
+/* ---------- Section ---------- */
+.section {
+  padding: var(--space-3xl) 0;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* ---------- Animation Keyframes ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(180deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ---------- Utility ---------- */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* ---------- Legal Pages ---------- */
+.legal-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-3xl) var(--space-lg);
+  animation: fadeIn 0.5s ease;
+}
+
+.legal-page h1 {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.legal-page .last-updated {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  margin-bottom: var(--space-2xl);
+}
+
+.legal-page h2 {
+  font-size: 1.35rem;
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-md);
+  color: var(--color-primary);
+}
+
+.legal-page p {
+  margin-bottom: var(--space-md);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.legal-page ul {
+  margin-bottom: var(--space-md);
+  padding-left: var(--space-lg);
+}
+
+.legal-page li {
+  list-style: disc;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 56px;
+  }
+
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .legal-page {
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .legal-page h1 {
+    font-size: 1.6rem;
   }
 }
